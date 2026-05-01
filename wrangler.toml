@@ -1,17 +1,5 @@
 name = "devops-mern-stack"
-type = "javascript"
-account_id = ""
-workers_dev = true
+compatibility_date = "2026-05-01"
 
-[build]
-command = "npm install && npm run build"
-cwd = "./client"
-watch_paths = ["../server/**/*.js"]
-
-[build.upload]
-format = "service-worker"
-
-[env.production]
-name = "devops-mern-stack-prod"
-route = "https://devops-mern-stack.pages.dev"
-zone_id = ""
+[assets]
+directory = "./client/dist"
