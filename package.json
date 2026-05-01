@@ -1,0 +1,25 @@
+{
+  "name": "devops-mern-stack",
+  "version": "1.0.0",
+  "description": "Full-stack MERN application with Docker support",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm --prefix client install && npm --prefix server install",
+    "build": "npm --prefix client run build",
+    "dev": "npm --prefix server run dev & npm --prefix client run dev",
+    "start:server": "npm --prefix server start",
+    "start:client": "npm --prefix client run preview",
+    "lint": "npm --prefix client run lint && npm --prefix server run lint",
+    "lint:fix": "npm --prefix client run lint:fix && npm --prefix server run lint:fix",
+    "format": "npm --prefix client run format && npm --prefix server run format"
+  },
+  "keywords": [
+    "mern",
+    "devops",
+    "docker",
+    "react",
+    "express"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
