@@ -1,5 +1,16 @@
-# Two services: backend API on 5000, frontend (nginx) on 80
+# Three services: MongoDB, backend API on 5000, frontend on 5173
 services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: task-app
+    volumes:
+      - mongo_data:/data/db
+
   backend:
     build: ./server
     container_name: backend
@@ -8,15 +19,22 @@ services:
       - ./server/.env        
     ports:
       - "5000:5000"
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URI: mongodb://mongo:27017/task-app
 
   frontend:
     build:
       context: ./client
       args:
-        VITE_API_URL: http://3.26.242.54:5000/api
+        VITE_API_URL: http://localhost:5000/api
     container_name: frontend
     restart: always
     ports:
       - "5173:5173"
     depends_on:
       - backend
+
+volumes:
+  mongo_data:
