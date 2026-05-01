@@ -4,6 +4,7 @@
   "description": "Full-stack MERN application with Docker support",
   "private": true,
   "scripts": {
+    "postinstall": "npm --prefix client install --include=dev",
     "install:all": "npm install && npm --prefix client install && npm --prefix server install",
     "build": "npm --prefix client run build",
     "dev": "npm --prefix server run dev & npm --prefix client run dev",
