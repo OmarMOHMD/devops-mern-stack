@@ -2,12 +2,8 @@ node_modules/
 .env
 client/.env.local
 client/node_modules/
-client/build/
 server/node_modules/
 logs/
 *.log
-.DS_Store
-.idea/
 .vscode/
 .github/
-coverage/
