@@ -4,7 +4,6 @@ client/.env.local
 client/node_modules/
 client/build/
 server/node_modules/
-server/dist/
 logs/
 *.log
 .DS_Store
@@ -12,6 +11,3 @@ logs/
 .vscode/
 .github/
 coverage/
-dist/
-*.zip
-*.tar.gz
