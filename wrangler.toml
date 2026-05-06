@@ -1,8 +1,6 @@
 name = "devops-mern-stack"
 compatibility_date = "2026-05-01"
-
-[assets]
-directory = "./client/dist"
+pages_build_output_dir = "client/dist"
 
 [observability]
 enabled = false
